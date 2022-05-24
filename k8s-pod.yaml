@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: discordbot
+spec:
+  containers:
+  - name: discordbot
+    image: mitin20/discordbot:latest
