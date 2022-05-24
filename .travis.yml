@@ -9,13 +9,13 @@ jobs:
       - docker images
       - docker tag discordbot $DHUB_USERNAME/discordbot
       - docker push $DHUB_USERNAME/discordbot
-    - stage: pre-deploy
+    - stage: deploy
       script: 
       - curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
       - chmod +x ./kubectl
       - sudo mv ./kubectl /usr/local/bin/kubectl
       - mkdir ${HOME}/.kube
       - echo "$KUBE_CONFIG" | base64 --decode > ${HOME}/.kube/config
-    - stage: deploy
-      script: kubectl apply -f k8s-pod.yaml
+      - kubectl apply -f k8s-pod.ya
+
 
