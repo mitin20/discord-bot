@@ -29,8 +29,8 @@ jobs:
       - echo "$DHUB_PASS" | docker login -u "$DHUB_USERNAME" --password-stdin
       - docker build -t discordbot .
       - docker images
-      - docker tag discordbot $DOCKER_USERNAME/discordbot
-      - docker push $DOCKER_USERNAME/discordbot
+      - docker tag discordbot $DHUB_USERNAME/discordbot
+      - docker push $DHUB_USERNAME/discordbot
     - stage: test
-      script: docker run --rm $DOCKER_USERNAME/discordbot cat hello.txt
-    - script: docker run --rm $DOCKER_USERNAME/discordbot cat hello.txt
+      script: docker run --rm $DHUB_USERNAME/discordbot cat hello.txt
+    - script: docker run --rm $DHUB_USERNAME/discordbot cat hello.txt
