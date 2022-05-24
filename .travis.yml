@@ -16,6 +16,6 @@ jobs:
       - sudo mv ./kubectl /usr/local/bin/kubectl
       - mkdir ${HOME}/.kube
       - echo "$KUBE_CONFIG" | base64 --decode > ${HOME}/.kube/config
-      - kubectl apply -f k8s-pod.ya
+      - kubectl apply -f k8s-pod.yaml
 
 
